@@ -6,7 +6,7 @@
   <link href="http://juzhango.top/atom.xml" rel="self"/>
   
   <link href="http://juzhango.top/"/>
-  <updated>2021-01-10T06:34:39.588Z</updated>
+  <updated>2021-01-10T16:45:44.716Z</updated>
   <id>http://juzhango.top/</id>
   
   <author>
@@ -17,24 +17,9 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>freertos学习_1</title>
+    <title>freertos学习-1</title>
     <link href="http://juzhango.top/2021/01/10/freertos%E5%AD%A6%E4%B9%A0-1/"/>
     <id>http://juzhango.top/2021/01/10/freertos%E5%AD%A6%E4%B9%A0-1/</id>
-    <published>2021-01-10T06:34:03.000Z</published>
-    <updated>2021-01-10T06:34:39.588Z</updated>
-    
-    
-    
-    
-    
-    <category term="学习记录" scheme="http://juzhango.top/tags/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>freertos学习-1</title>
-    <link href="http://juzhango.top/2021/01/10/freertos%E5%86%85%E6%A0%B8%E5%BA%94%E7%94%A8-1/"/>
-    <id>http://juzhango.top/2021/01/10/freertos%E5%86%85%E6%A0%B8%E5%BA%94%E7%94%A8-1/</id>
     <published>2021-01-10T06:34:03.000Z</published>
     <updated>2021-01-10T16:45:44.716Z</updated>
     
