@@ -6,7 +6,7 @@
   <link href="http://juzhango.top/atom.xml" rel="self"/>
   
   <link href="http://juzhango.top/"/>
-  <updated>2021-01-23T08:57:44.819Z</updated>
+  <updated>2021-01-26T16:09:37.773Z</updated>
   <id>http://juzhango.top/</id>
   
   <author>
@@ -15,6 +15,55 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>二、KiCad创建符号和封装</title>
+    <link href="http://juzhango.top/2021/01/26/%E4%BA%8C%E3%80%81KiCad%E5%88%9B%E5%BB%BA%E7%AC%A6%E5%8F%B7%E5%92%8C%E5%B0%81%E8%A3%85/"/>
+    <id>http://juzhango.top/2021/01/26/%E4%BA%8C%E3%80%81KiCad%E5%88%9B%E5%BB%BA%E7%AC%A6%E5%8F%B7%E5%92%8C%E5%B0%81%E8%A3%85/</id>
+    <published>2021-01-26T15:11:05.000Z</published>
+    <updated>2021-01-26T16:09:37.773Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="符号编辑器"><a href="#符号编辑器" class="headerlink" title="符号编辑器"></a>符号编辑器</h1><p>打开符号编辑器。</p><p>新建库，到我们的项目上。</p><p><a href="https://imgchr.com/i/svYJxI"><img src="https://s3.ax1x.com/2021/01/26/svYJxI.md.png" alt="svYJxI.md.png"></a></p><p>可以保存至工程或者全局。</p><p>然后在usb-device右键新建符号 <code>CH340N</code></p><p>在<code>首选项</code>，<code>管理符号库</code>。</p><p>有全局库可以导入文件，和工程库。</p><p>调整栅格100mm，画线框和引脚</p><p><a href="https://imgchr.com/i/svNAj1"><img src="https://s3.ax1x.com/2021/01/26/svNAj1.png" alt="svNAj1.png"></a></p><p>快捷键<code>INS</code>可以连续添加引脚。按<code>R</code>翻转。调整栅格50mm</p><p>功能栏选择<code>显示引脚列表</code>，对照芯片手册修改引脚功能。</p><p><a href="https://imgchr.com/i/svNoK1"><img src="https://s3.ax1x.com/2021/01/26/svNoK1.png" alt="svNoK1.png"></a></p><p>电气特性，用于做DRC检查。</p><p>修改锚点。之间点到符号正中心。</p><p>库符号属性：标注40mils改成20mils,分配封装，<code>Package_SO-&gt;SOIC-8 3.9*4.9MM P1.27</code></p><p>回到原理图绘制页面，就可以放置了。</p><p><a href="https://imgchr.com/i/svdK4U"><img src="https://s3.ax1x.com/2021/01/26/svdK4U.md.png" alt="svdK4U.md.png"></a></p><h1 id="创建封装"><a href="#创建封装" class="headerlink" title="创建封装"></a>创建封装</h1><p>打开封装编辑器</p><p>创建封装库与符号库差不多</p><p>从封装向导创建。</p><p>选择SOIC</p><p><a href="https://imgchr.com/i/svdXPU"><img src="https://s3.ax1x.com/2021/01/26/svdXPU.png" alt="svdXPU.png"></a></p><p>导出封装到编辑器。</p><p>然后修改封装属性：制造属性一定是表面贴装</p><p>3D设置选一个3D符号库。</p><p><a href="https://imgchr.com/i/svw0oV"><img src="https://s3.ax1x.com/2021/01/27/svw0oV.md.png" alt="svw0oV.md.png"></a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;符号编辑器&quot;&gt;&lt;a href=&quot;#符号编辑器&quot; class=&quot;headerlink&quot; title=&quot;符号编辑器&quot;&gt;&lt;/a&gt;符号编辑器&lt;/h1&gt;&lt;p&gt;打开符号编辑器。&lt;/p&gt;
+&lt;p&gt;新建库，到我们的项目上。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://imgch</summary>
+      
+    
+    
+    
+    
+    <category term="pcb学习" scheme="http://juzhango.top/tags/pcb%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一、KiCad入门使用</title>
+    <link href="http://juzhango.top/2021/01/24/%E4%B8%80%E3%80%81KiCad%E5%85%A5%E9%97%A8%E4%BD%BF%E7%94%A8/"/>
+    <id>http://juzhango.top/2021/01/24/%E4%B8%80%E3%80%81KiCad%E5%85%A5%E9%97%A8%E4%BD%BF%E7%94%A8/</id>
+    <published>2021-01-24T15:31:51.000Z</published>
+    <updated>2021-01-25T15:55:36.406Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>我的第一个KiCAD项目，一个USB-TTL模块，芯片CH330N。由于是第一次用这个工具软件，内容比较细，多图预警<code>:satisfied:</code></p></blockquote><h1 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h1><p>官网下载安装。</p><h1 id="创建工程"><a href="#创建工程" class="headerlink" title="创建工程"></a>创建工程</h1><p>文件 -&gt; 新建 -&gt; 工程</p><p><a href="https://imgchr.com/i/sqEOZF"><img src="https://s3.ax1x.com/2021/01/24/sqEOZF.md.png" alt="sqEOZF.md.png"></a></p><p><a href="https://imgchr.com/i/sqVCM6"><img src="https://s3.ax1x.com/2021/01/24/sqVCM6.md.png" alt="sqVCM6.md.png"></a></p><h1 id="绘制原理图"><a href="#绘制原理图" class="headerlink" title="绘制原理图"></a>绘制原理图</h1><p>双击原理图文件，弹出绘制原理图工作窗口</p><p>配置一下信息</p><p><a href="https://imgchr.com/i/sqmwOP"><img src="https://s3.ax1x.com/2021/01/25/sqmwOP.md.png" alt="sqmwOP.md.png"></a></p><p>按快捷键A打开元件库，第一次使用时需要加载元件库，添加需要元器件</p><p>搜索框输入：</p><p>C，添加电容</p><p>R，添加电阻</p><p>LED，添加LED灯</p><p>CH330N，添加CH330芯片</p><p>USB_A，添加USB接口</p><p>Conn_01x05，添加排针</p><p>也可以选择“在符号库浏览器中选择”</p><p><a href="https://imgchr.com/i/sqZ01I"><img src="https://s3.ax1x.com/2021/01/24/sqZ01I.md.png" alt="sqZ01I.md.png"></a></p><p>按<code>ESC</code>键取消当前鼠标状态，将鼠标指针放到元件上按快捷键<code>M</code>移动位置，快捷键<code>R</code>翻转元件。</p><p><a href="https://imgchr.com/i/sqZj3R"><img src="https://s3.ax1x.com/2021/01/24/sqZj3R.md.png" alt="sqZj3R.md.png"></a></p><p>快捷键<code>P</code>增加电源</p><p><a href="https://imgchr.com/i/sqerG9"><img src="https://s3.ax1x.com/2021/01/24/sqerG9.md.png" alt="sqerG9.md.png"></a></p><p>快捷键<code>W</code>布线，双击鼠标左键闭合布线。快捷键<code>L</code>怎讲网络标号。</p><p><a href="https://imgchr.com/i/sqeTxI"><img src="https://s3.ax1x.com/2021/01/25/sqeTxI.md.png" alt="sqeTxI.md.png"></a></p><p>给符号添加封装。</p><p><a href="https://imgchr.com/i/sqmpzn"><img src="https://s3.ax1x.com/2021/01/25/sqmpzn.md.png" alt="sqmpzn.md.png"></a></p><p><a href="https://imgchr.com/i/sqmKQ1"><img src="https://s3.ax1x.com/2021/01/25/sqmKQ1.md.png" alt="sqmKQ1.md.png"></a></p><p>通过快捷键<code>V</code>或者双击元件文本修改。</p><p>两个电容修改为104，两个电阻修改为4.7K</p><p><a href="https://imgchr.com/i/sqmfO0"><img src="https://s3.ax1x.com/2021/01/25/sqmfO0.md.png" alt="sqmfO0.md.png"></a></p><p>最后给原理图做批准。</p><p><a href="https://imgchr.com/i/sqmXOx"><img src="https://s3.ax1x.com/2021/01/25/sqmXOx.png" alt="sqmXOx.png"></a></p><p>执行电器规则检查。</p><p>保存 -&gt; 工具 -&gt; 从原理图更新PCB</p><p>或者按F8。</p><h1 id="绘制PCB"><a href="#绘制PCB" class="headerlink" title="绘制PCB"></a>绘制PCB</h1><p>双击PCB文件。</p><p>右键 -&gt; 网格 -&gt; 1.0mm</p><p>在100，100处设置网格原点。</p><p><a href="https://imgchr.com/i/sqnZ0f"><img src="https://s3.ax1x.com/2021/01/25/sqnZ0f.png" alt="sqnZ0f.png"></a></p><p>选择涂层。画边框</p><p><a href="https://imgchr.com/i/sqnKhQ"><img src="https://s3.ax1x.com/2021/01/25/sqnKhQ.png" alt="sqnKhQ.png"></a></p><p><a href="https://imgchr.com/i/sqnY7T"><img src="https://s3.ax1x.com/2021/01/25/sqnY7T.png" alt="sqnY7T.png"></a></p><p><a href="https://imgchr.com/i/sqnBcR"><img src="https://s3.ax1x.com/2021/01/25/sqnBcR.png" alt="sqnBcR.png"></a></p><p>绘制25*16切割层，以及修改网格为0.1mm，画出缩小0.3毫米的电路编辑层。</p><p><a href="https://imgchr.com/i/squ9bV"><img src="https://s3.ax1x.com/2021/01/25/squ9bV.png" alt="squ9bV.png"></a></p><p><a href="https://imgchr.com/i/squpD0"><img src="https://s3.ax1x.com/2021/01/25/squpD0.png" alt="squpD0.png"></a></p><p>放置元件，微调可通过<code>M + 方向键</code>,也可通过快捷键<code>E</code>修改坐标信息。</p><p>在原理图快捷键<code>X``Y</code>翻转引脚。</p><p>设置规则</p><p><a href="https://imgchr.com/i/sOMrDA"><img src="https://s3.ax1x.com/2021/01/25/sOMrDA.md.png" alt="sOMrDA.md.png"></a></p><p><a href="https://imgchr.com/i/sOMW8S"><img src="https://s3.ax1x.com/2021/01/25/sOMW8S.md.png" alt="sOMW8S.md.png"></a></p><p><a href="https://imgchr.com/i/sOM7Eq"><img src="https://s3.ax1x.com/2021/01/25/sOM7Eq.md.png" alt="sOM7Eq.md.png"></a></p><p><a href="https://imgchr.com/i/sOQA2D"><img src="https://s3.ax1x.com/2021/01/25/sOQA2D.md.png" alt="sOQA2D.md.png"></a></p><p>布线，放置差分线(0.28mm)，电源线(1mm),其他(0.5mm)</p><p>快捷键<code>D</code>拉动布线，快捷键<code>L</code>锁定布线。<code>V</code>切换布线层和放置过孔。</p><p><a href="https://imgchr.com/i/sO1sb9"><img src="https://s3.ax1x.com/2021/01/25/sO1sb9.png" alt="sO1sb9.png"></a></p><p>覆铜</p><p>选择添加填充区域</p><p><a href="https://imgchr.com/i/sO1zrQ"><img src="https://s3.ax1x.com/2021/01/25/sO1zrQ.md.png" alt="sO1zrQ.md.png"></a></p><p>第二面覆铜可以</p><p>右键 -&gt; 覆铜 -&gt; 重复填充，然后按<code>B</code>。</p><p><code>Alt+3</code>看效果图</p><p><a href="https://imgchr.com/i/sOscOs"><img src="https://s3.ax1x.com/2021/01/25/sOscOs.png" alt="sOscOs.png"></a></p><h1 id="导出Gerber"><a href="#导出Gerber" class="headerlink" title="导出Gerber"></a>导出Gerber</h1><h2 id="位图"><a href="#位图" class="headerlink" title="位图"></a>位图</h2><p><a href="https://imgchr.com/i/sOyc9O"><img src="https://s3.ax1x.com/2021/01/25/sOyc9O.md.png" alt="sOyc9O.md.png"></a></p><h2 id="Gerber"><a href="#Gerber" class="headerlink" title="Gerber"></a>Gerber</h2><p>生成过孔文件</p><p><a href="https://imgchr.com/i/sO68rd"><img src="https://s3.ax1x.com/2021/01/25/sO68rd.md.png" alt="sO68rd.md.png"></a></p><h2 id="生成坐标图"><a href="#生成坐标图" class="headerlink" title="生成坐标图"></a>生成坐标图</h2><p>文件 -&gt; 制造输出 -&gt; 封装位置文件</p><p><a href="https://imgchr.com/i/sO6IsJ"><img src="https://s3.ax1x.com/2021/01/25/sO6IsJ.md.png" alt="sO6IsJ.md.png"></a></p><h2 id="BOM文件"><a href="#BOM文件" class="headerlink" title="BOM文件"></a>BOM文件</h2><p>回到原理图</p><p><a href="https://imgchr.com/i/sO6zsH"><img src="https://s3.ax1x.com/2021/01/25/sO6zsH.md.png" alt="sO6zsH.md.png"></a></p><h1 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h1><p>github下载两个插件，放到指定的安装目录下</p><p><a href="https://github.com/openscopeproject/InteractiveHtmlBom">https://github.com/openscopeproject/InteractiveHtmlBom</a></p><p><a href="https://github.com/NilujePerchut/kicad_scripts">https://github.com/NilujePerchut/kicad_scripts</a></p><p><a href="https://imgchr.com/i/sOcVSS"><img src="https://s3.ax1x.com/2021/01/25/sOcVSS.png" alt="sOcVSS.png"></a></p><h2 id="泪滴插件"><a href="#泪滴插件" class="headerlink" title="泪滴插件"></a>泪滴插件</h2><p><a href="https://imgchr.com/i/sOcUm9"><img src="https://s3.ax1x.com/2021/01/25/sOcUm9.png" alt="sOcUm9.png"></a></p><h2 id="HtmlBom"><a href="#HtmlBom" class="headerlink" title="HtmlBom"></a>HtmlBom</h2><p><a href="https://imgchr.com/i/sOcHXQ"><img src="https://s3.ax1x.com/2021/01/25/sOcHXQ.md.png" alt="sOcHXQ.md.png"></a></p><h2 id="Gerber文件查看器"><a href="#Gerber文件查看器" class="headerlink" title="Gerber文件查看器"></a>Gerber文件查看器</h2><p>回到工程窗口，打开Gerber文件</p><p><a href="https://imgchr.com/i/sO2FxS"><img src="https://s3.ax1x.com/2021/01/25/sO2FxS.md.png" alt="sO2FxS.md.png"></a></p><p>查看钻孔文件需要再单独打开。</p><h2 id="更多插件"><a href="#更多插件" class="headerlink" title="更多插件"></a>更多插件</h2><p>可以到github搜索kicad发掘使用的插件。</p><h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><p><a href="https://kicad.org/">https://kicad.org/</a></p><p><a href="https://github.com/openscopeproject/InteractiveHtmlBom">https://github.com/openscopeproject/InteractiveHtmlBom</a></p><p><a href="https://github.com/NilujePerchut/kicad_scripts">https://github.com/NilujePerchut/kicad_scripts</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;我的第一个KiCAD项目，一个USB-TTL模块，芯片CH330N。由于是第一次用这个工具软件，内容比较细，多图预警&lt;code&gt;:satisfied:&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;软件安装&quot;&gt;&lt;a href=&quot;</summary>
+      
+    
+    
+    
+    
+    <category term="pcb学习" scheme="http://juzhango.top/tags/pcb%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>stm32cubemx+clion环境搭建</title>

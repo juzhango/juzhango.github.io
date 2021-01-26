@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://juzhango.top/2021/01/26/%E4%BA%8C%E3%80%81KiCad%E5%88%9B%E5%BB%BA%E7%AC%A6%E5%8F%B7%E5%92%8C%E5%B0%81%E8%A3%85/</loc>
+    
+    <lastmod>2021-01-26</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://juzhango.top/2021/01/24/%E4%B8%80%E3%80%81KiCad%E5%85%A5%E9%97%A8%E4%BD%BF%E7%94%A8/</loc>
+    
+    <lastmod>2021-01-25</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://juzhango.top/2020/12/18/hello-world/</loc>
     
     <lastmod>2021-01-23</lastmod>
@@ -53,7 +67,7 @@
 
   <url>
     <loc>http://juzhango.top/</loc>
-    <lastmod>2021-01-23</lastmod>
+    <lastmod>2021-01-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -61,14 +75,21 @@
   
   <url>
     <loc>http://juzhango.top/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</loc>
-    <lastmod>2021-01-23</lastmod>
+    <lastmod>2021-01-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://juzhango.top/tags/pcb%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2021-01-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://juzhango.top/tags/%E9%9A%8F%E7%AC%94/</loc>
-    <lastmod>2021-01-23</lastmod>
+    <lastmod>2021-01-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
