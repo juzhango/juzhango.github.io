@@ -6,7 +6,7 @@
   <link href="http://juzhango.top/atom.xml" rel="self"/>
   
   <link href="http://juzhango.top/"/>
-  <updated>2021-01-27T17:40:17.841Z</updated>
+  <updated>2021-03-21T09:13:08.703Z</updated>
   <id>http://juzhango.top/</id>
   
   <author>
@@ -15,6 +15,23 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>博客部署到coding.net</title>
+    <link href="http://juzhango.top/2021/03/21/%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0coding-net/"/>
+    <id>http://juzhango.top/2021/03/21/%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0coding-net/</id>
+    <published>2021-03-21T09:11:46.000Z</published>
+    <updated>2021-03-21T09:13:08.703Z</updated>
+    
+    
+    <summary type="html">博客部署到github因为网络问题打不开，换到coding.net试试</summary>
+    
+    
+    
+    
+    <category term="随笔" scheme="http://juzhango.top/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
   
   <entry>
     <title>freertos源码阅读--列表和列表项</title>
