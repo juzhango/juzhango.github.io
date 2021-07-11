@@ -95,13 +95,6 @@
 
   
   <url>
-    <loc>http://juzhango.top/tags/%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/</loc>
-    <lastmod>2021-07-11</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://juzhango.top/tags/%E9%9A%8F%E7%AC%94/</loc>
     <lastmod>2021-07-11</lastmod>
     <changefreq>daily</changefreq>
@@ -110,6 +103,13 @@
   
   <url>
     <loc>http://juzhango.top/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</loc>
+    <lastmod>2021-07-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://juzhango.top/tags/%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/</loc>
     <lastmod>2021-07-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
