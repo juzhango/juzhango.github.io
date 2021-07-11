@@ -6,7 +6,7 @@
   <link href="http://juzhango.top/atom.xml" rel="self"/>
   
   <link href="http://juzhango.top/"/>
-  <updated>2021-03-21T09:13:08.703Z</updated>
+  <updated>2021-07-11T01:59:29.970Z</updated>
   <id>http://juzhango.top/</id>
   
   <author>
@@ -17,14 +17,43 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>博客部署到coding.net</title>
-    <link href="http://juzhango.top/2021/03/21/%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0coding-net/"/>
-    <id>http://juzhango.top/2021/03/21/%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0coding-net/</id>
-    <published>2021-03-21T09:11:46.000Z</published>
-    <updated>2021-03-21T09:13:08.703Z</updated>
+    <title>PicGo+gitee搭建图床</title>
+    <link href="http://juzhango.top/2021/07/11/PicGo-gitee%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/"/>
+    <id>http://juzhango.top/2021/07/11/PicGo-gitee%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/</id>
+    <published>2021-07-11T01:48:45.000Z</published>
+    <updated>2021-07-11T01:59:29.970Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="一、gitee建仓库"><a href="#一、gitee建仓库" class="headerlink" title="一、gitee建仓库"></a>一、gitee建仓库</h1><p>建仓库并添加文件夹<code>data</code></p><p><img src="https://gitee.com/juzhango/imag/raw/master/data/711.png" alt="1"></p><p>设置 -&gt; 私人令牌 -&gt; 提交，复制代码待会要用</p><h1 id="二、安装node"><a href="#二、安装node" class="headerlink" title="二、安装node"></a>二、安装node</h1><p><a href="http://nodejs.cn/">Node.js 中文网 (nodejs.cn)</a></p><h1 id="三、安装并并配置PicGo"><a href="#三、安装并并配置PicGo" class="headerlink" title="三、安装并并配置PicGo"></a>三、安装并并配置PicGo</h1><p><a href="https://molunerfinn.com/PicGo/">https://molunerfinn.com/PicGo/</a></p><p>安装后打开运行下载gitee插件。</p><p><img src="https://gitee.com/juzhango/imag/raw/master/data/picgo1.png" alt="2"></p>]]></content>
     
     
-    <summary type="html">博客部署到github因为网络问题打不开，换到coding.net试试</summary>
+      
+      
+    <summary type="html">&lt;h1 id=&quot;一、gitee建仓库&quot;&gt;&lt;a href=&quot;#一、gitee建仓库&quot; class=&quot;headerlink&quot; title=&quot;一、gitee建仓库&quot;&gt;&lt;/a&gt;一、gitee建仓库&lt;/h1&gt;&lt;p&gt;建仓库并添加文件夹&lt;code&gt;data&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img</summary>
+      
+    
+    
+    
+    
+    <category term="随笔" scheme="http://juzhango.top/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>汇编符号</title>
+    <link href="http://juzhango.top/2021/07/11/%E6%B1%87%E7%BC%96%E7%AC%A6%E5%8F%B7/"/>
+    <id>http://juzhango.top/2021/07/11/%E6%B1%87%E7%BC%96%E7%AC%A6%E5%8F%B7/</id>
+    <published>2021-07-11T01:47:59.000Z</published>
+    <updated>2021-07-11T02:07:56.072Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="LDR"><a href="#LDR" class="headerlink" title="LDR"></a>LDR</h1><p>LDR（load register）指令将内存内容加载入通用寄存器。</p><p>1、LDR与MOV的不同：ldr能将数据从内存读到CPU，或者从内存中某处读取到寄存器中，而mov只能在寄存器之间移动数据，或者把立即数移动到寄存器中，如 MOV r0,#0是将立即数0放到r0中；</p><p>2、MOV是从一个寄存器或者移位的寄存器或者立即数的值传递到另外一个寄存器。但不是所有立即数都可以传递的，这个立即数要符合一个8位数循环右移偶数位的取值。 原因是，MOV本身就是一条32bit指令，除了指令码本身，它不可能再带一个可以表示32bit的数字，所以用了其中的12bit来表示立即数，其中4bit表示移位的位数(循环右移，且数值乘以2)，8bit用来表示要移位的一个基数。而对于ldr伪指令，可以在立即数前加上=，以表示把一个地址写到某寄存器中，比如： ldr r0, =0x12345678 这样，就把0x12345678这个地址写到r0中了。ldr伪指令和mov是比较相似，但mov指令限制了立即数的长度为8位，也就是不能超过512。而ldr伪指令没有这个限制。如果使用ldr伪指令时，后面跟的立即数没有超过8位，那么在实际汇编的时候该ldr伪指令是被转换为 mov指令的。</p><p>3、LDR指令的寻址方式实例分类：</p><blockquote><p>LDR r0，[r1]        //将存储器地址为R1的数据读入寄存器r0</p><p>LDR r0，[r1，r2]      //将存储器地址为r1+r2的数据读入寄存器r0</p><p>LDR r0，[r1，#8]      //将存储器地址为r1+8的数据读入寄存器r0</p><p>LDR r0，[r1],r2      //将存储器地址为r1的数据读入寄存器r0，并将r1+r2的值存入r1</p><p>LDR r0，[r1],#8      //将存储器地址为r1的数据读入寄存器r0，并将r1+8的值存入r1</p><p>LDR r0，[r1，r2]!      //将存储器地址为r1+r2的数据读入寄存器r0，并将r1+r2的值存入r1</p><p>LDR r0，[r1，LSL #3]    //将存储器地址为r1*8的数据读入寄存器r0</p><p>LDR r0，[r1，r2，LSL #2]  //将存储器地址为r1+r2*4的数据读入寄存器r0</p><p>LDR r0，[r1,r2，LSL #2]！ //将存储器地址为r1+r2<em>4的数据读入寄存器r0，并将r1+r2</em>4的值存入r1</p><p>LDR r0，[r1],r2，LSL #2  //将存储器地址为r1的数据读入寄存器R0，并将r1+r2*4的值存入r1</p><p>LDR r0，Label      //Label为程序标号，Label必须是当前指令的-4~4KB范围内</p></blockquote><h1 id="STR"><a href="#STR" class="headerlink" title="STR"></a>STR</h1><p>STR（store register）指令将寄存器内容存入内存空间中</p><blockquote><p>STR  r0 , [r1]         // 寄存器间接寻址。把r0中的数写入到以r1为地址的内存中去</p></blockquote>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;LDR&quot;&gt;&lt;a href=&quot;#LDR&quot; class=&quot;headerlink&quot; title=&quot;LDR&quot;&gt;&lt;/a&gt;LDR&lt;/h1&gt;&lt;p&gt;LDR（load register）指令将内存内容加载入通用寄存器。&lt;/p&gt;
+&lt;p&gt;1、LDR与MOV的不同：ldr能将数据从内存读</summary>
+      
     
     
     

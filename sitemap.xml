@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://juzhango.top/2021/03/21/%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0coding-net/</loc>
+    <loc>http://juzhango.top/2021/07/11/%E6%B1%87%E7%BC%96%E7%AC%A6%E5%8F%B7/</loc>
     
-    <lastmod>2021-03-21</lastmod>
+    <lastmod>2021-07-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://juzhango.top/2021/07/11/PicGo-gitee%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/</loc>
+    
+    <lastmod>2021-07-11</lastmod>
     
   </url>
   
@@ -81,7 +88,7 @@
 
   <url>
     <loc>http://juzhango.top/</loc>
-    <lastmod>2021-05-02</lastmod>
+    <lastmod>2021-07-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -89,28 +96,28 @@
   
   <url>
     <loc>http://juzhango.top/tags/%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/</loc>
-    <lastmod>2021-05-02</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://juzhango.top/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</loc>
-    <lastmod>2021-05-02</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://juzhango.top/tags/pcb%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2021-05-02</lastmod>
+    <lastmod>2021-07-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://juzhango.top/tags/%E9%9A%8F%E7%AC%94/</loc>
-    <lastmod>2021-05-02</lastmod>
+    <lastmod>2021-07-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://juzhango.top/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</loc>
+    <lastmod>2021-07-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://juzhango.top/tags/pcb%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2021-07-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
