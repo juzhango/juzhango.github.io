@@ -1,0 +1,218 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>linux配置samba服务 | 橘长oの小窝</title><meta name="author" content="橘长o"><meta name="copyright" content="橘长o"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="配置12sudo vim &#x2F;etc&#x2F;samba&#x2F;smb.confsudo service smbd restart  需用户登入1234567[lzw_work] # 映射出来的文件夹名称   comment &#x3D; &#x2F;home&#x2F;lzw&#x2F;work # 描述   path &#x3D; &#x2F;home&#x2F;lzw&#x2F;work # 路径   valid users &#x3D; lzw # samba用户   browseable &#x3D;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux配置samba服务">
+<meta property="og:url" content="http://juzhango.cn/_posts/107925f6/index.html">
+<meta property="og:site_name" content="橘长oの小窝">
+<meta property="og:description" content="配置12sudo vim &#x2F;etc&#x2F;samba&#x2F;smb.confsudo service smbd restart  需用户登入1234567[lzw_work] # 映射出来的文件夹名称   comment &#x3D; &#x2F;home&#x2F;lzw&#x2F;work # 描述   path &#x3D; &#x2F;home&#x2F;lzw&#x2F;work # 路径   valid users &#x3D; lzw # samba用户   browseable &#x3D;">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
+<meta property="article:published_time" content="2024-04-02T23:19:05.000Z">
+<meta property="article:modified_time" content="2024-04-02T15:41:11.565Z">
+<meta property="article:author" content="橘长o">
+<meta property="article:tag" content="linux">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://juzhango.cn/_posts/107925f6/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'linux配置samba服务',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-04-02 15:41:11'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">8</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="橘长oの小窝"><span class="site-name">橘长oの小窝</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">linux配置samba服务</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-04-02T23:19:05.000Z" title="发表于 2024-04-02 23:19:05">2024-04-02</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-04-02T15:41:11.565Z" title="更新于 2024-04-02 15:41:11">2024-04-02</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="linux配置samba服务"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/samba/smb.conf</span><br><span class="line">sudo service smbd restart</span><br></pre></td></tr></table></figure>
+
+<h2 id="需用户登入"><a href="#需用户登入" class="headerlink" title="需用户登入"></a>需用户登入</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[lzw_work] <span class="comment"># 映射出来的文件夹名称</span></span><br><span class="line">   comment = /home/lzw/work <span class="comment"># 描述</span></span><br><span class="line">   path = /home/lzw/work <span class="comment"># 路径</span></span><br><span class="line">   valid <span class="built_in">users</span> = lzw <span class="comment"># samba用户</span></span><br><span class="line">   browseable = <span class="built_in">yes</span> <span class="comment"># 路径可见的</span></span><br><span class="line">   guest ok = no <span class="comment"># 需要登陆才能访问</span></span><br><span class="line">   writable = <span class="built_in">yes</span> <span class="comment"># 可写</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="配置项说明"><a href="#配置项说明" class="headerlink" title="配置项说明"></a>配置项说明</h2><ul>
+<li><code>writable</code> 和 <code>read only</code>：配置客户端访问的权限，两个配置项存在互斥关系，一般只使用 <code>writable</code> 即可。</li>
+<li><code>guest ok</code> 和 <code>public</code>：表示是否可以匿名访问，即不需要登陆进行访问，在现代 Samba 配置中更倾向使用 <code>guest ok</code>。</li>
+<li><code>browseable</code>：是否要在网络上可见。</li>
+</ul>
+<h2 id="valid-users和force-users"><a href="#valid-users和force-users" class="headerlink" title="valid users和force users"></a>valid users和force users</h2><p>在 Samba 配置文件（<code>smb.conf</code>）中，<code>valid users</code> 和 <code>force users</code> 两个选项分别用于控制对共享资源的不同访问权限：</p>
+<ol>
+<li><p><strong>valid users</strong></p>
+<ul>
+<li>描述：<code>valid users</code> 选项定义了哪些用户允许访问共享资源。只有在这个列表中的用户才能成功登录并访问指定的共享目录。可以在这里列出单个用户账号，也可以使用组名（如果用户属于该组）或通配符（例如 <code>%users</code> 表示所有系统用户）。多个用户之间用逗号分隔。</li>
+<li>示例：<code>valid users = user1, user2, @group_name</code></li>
+<li>当 <code>security = user</code> 时，此选项尤为关键，因为它决定了哪个系统用户能够通过Samba访问共享资源。</li>
+</ul>
+</li>
+<li><p><strong>force users</strong></p>
+<ul>
+<li>描述：<code>force users</code> 选项指定了即使不在 <code>valid users</code> 列表中，也始终会被强制登录并访问共享资源的用户。当设置 <code>force users</code> 时，即使在 <code>valid users</code> 中没有列出这些用户，它们也能无条件地访问共享。</li>
+<li>示例：<code>force users = admin_user</code></li>
+<li>注意：通常情况下，<code>force users</code> 选项不是为了日常访问控制设计的，更多的是用于特殊场景下的调试或者紧急访问目的。</li>
+</ul>
+</li>
+</ol>
+<p>总结来说，<code>valid users</code> 是一个白名单机制，用来限定允许访问的用户范围，而 <code>force users</code> 则是一种特殊情况下的强制定向授权，它会无视常规的访问控制规则，强制指定用户获得访问权限。在大多数正常情况下，只需要配置 <code>valid users</code> 即可满足基本的访问控制需求。</p>
+<h1 id="samba用户创建"><a href="#samba用户创建" class="headerlink" title="samba用户创建"></a>samba用户创建</h1><p><code>smbpasswd</code> 是一个在 Linux 和类 Unix 系统中管理 Samba 服务用户账户和密码的命令行工具。它主要用于创建、删除、禁用、启用 Samba 用户账户以及更改其 Samba 密码。以下是一些 <code>smbpasswd</code> 命令的常见用法及其选项说明：</p>
+<ul>
+<li><strong>添加用户</strong>： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">smbpasswd -a [username]</span><br></pre></td></tr></table></figure>
+ 这个命令会为已经存在于系统的用户添加一个 Samba 密码，使其能够通过 Samba 访问共享资源。</li>
+</ul>
+<blockquote>
+<p><strong>注意：</strong> Samba 用户基于系统用户存在，所以在使用 <code>smbpasswd</code> 添加 Samba 密码前，需要确保该用户已经在系统中创建。可以通过 <code>useradd</code> 或 <code>adduser</code> 命令先创建系统用户。</p>
+</blockquote>
+<ul>
+<li><p><strong>删除用户</strong>：</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">smbpasswd -x [username]</span><br></pre></td></tr></table></figure>
+<p> 删除指定的 Samba 用户账号，使其无法再通过 Samba 进行认证。</p>
+</li>
+<li><p><strong>冻结用户</strong>（禁止登录）：</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">smbpasswd -d [username]</span><br></pre></td></tr></table></figure>
+<p> 将指定的 Samba 用户账户冻结，暂时阻止其通过 Samba 登录。</p>
+</li>
+<li><p><strong>恢复用户</strong>（解冻，允许登录）：</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">smbpasswd -e [username]</span><br></pre></td></tr></table></figure>
+<p> 恢复之前被冻结的 Samba 用户账户，使其能够再次通过 Samba 登录。</p>
+</li>
+<li><p><strong>修改密码</strong>：</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">smbpasswd [username]</span><br></pre></td></tr></table></figure>
+<p> 不带选项直接执行 <code>smbpasswd</code> 并输入用户名后，将会提示用户输入新的 Samba 密码并确认。</p>
+</li>
+<li><p><strong>设置空密码</strong>（通常不建议这样做，因为很多配置默认不允许空密码）：</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">smbpasswd -n [username]</span><br></pre></td></tr></table></figure>
+<p> 设置用户的 Samba 密码为空。请注意，这通常需要在 Samba 配置文件（如 <code>/etc/samba/smb.conf</code>）中允许空密码才能生效。</p>
+</li>
+</ul>
+<p>这些操作通常需要具有管理员权限（root 或者通过 sudo 执行）。</p>
+<p>如果您想了解更详细的帮助信息或查看所有可用选项，请运行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">smbpasswd --<span class="built_in">help</span></span><br></pre></td></tr></table></figure>
+
+<p>根据不同的 Samba 版本和系统环境，一些选项可能有所不同或有额外的选项，请参照实际系统中的 <code>smbpasswd</code> 命令的手册页或官方文档。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://juzhango.cn">橘长o</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://juzhango.cn/_posts/107925f6/">http://juzhango.cn/_posts/107925f6/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://juzhango.cn" target="_blank">橘长oの小窝</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/linux/">linux</a></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/_posts/21b2690f/" title="linux新建用户"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">linux新建用户</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/_posts/21b2690f/" title="linux新建用户"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-04-02</div><div class="title">linux新建用户</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">橘长o</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">8</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE"><span class="toc-number">1.</span> <span class="toc-text">配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9C%80%E7%94%A8%E6%88%B7%E7%99%BB%E5%85%A5"><span class="toc-number">1.1.</span> <span class="toc-text">需用户登入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E9%A1%B9%E8%AF%B4%E6%98%8E"><span class="toc-number">1.2.</span> <span class="toc-text">配置项说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#valid-users%E5%92%8Cforce-users"><span class="toc-number">1.3.</span> <span class="toc-text">valid users和force users</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#samba%E7%94%A8%E6%88%B7%E5%88%9B%E5%BB%BA"><span class="toc-number">2.</span> <span class="toc-text">samba用户创建</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/_posts/107925f6/" title="linux配置samba服务">linux配置samba服务</a><time datetime="2024-04-02T23:19:05.000Z" title="发表于 2024-04-02 23:19:05">2024-04-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/_posts/21b2690f/" title="linux新建用户">linux新建用户</a><time datetime="2024-04-02T22:49:10.000Z" title="发表于 2024-04-02 22:49:10">2024-04-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/_posts/28b0fb00/" title="sensor_drv_load_library()函数">sensor_drv_load_library()函数</a><time datetime="2024-04-02T17:46:14.000Z" title="发表于 2024-04-02 17:46:14">2024-04-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/_posts/4a17b156/" title="Hello World">Hello World</a><time datetime="2024-04-02T15:41:11.549Z" title="发表于 2024-04-02 15:41:11">2024-04-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/_posts/971ea0e1/" title="uis7870sc点亮lcd">uis7870sc点亮lcd</a><time datetime="2024-03-27T09:17:36.000Z" title="发表于 2024-03-27 09:17:36">2024-03-27</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2024 By 橘长o</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text"><imgsrc="https://haiyong.site/img/icp.png"><a href="https://beian.miit.gov.cn/#/Integrated/index"  style="color:white" target="_blank">闽ICP备2024039811号</a>,<imgsrc="https://icp.gov.moe/images/ico64.png"><a href="https://icp.gov.moe/"  style="color:white" target="_blank">萌ICP备20240319号</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
